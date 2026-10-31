@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Product details – Tilde</title>
+<meta name="description" content="Product details, quantity selector and related products.">
+<meta property="og:title" content="Product details – Tilde"><meta property="og:description" content="Product details, quantity selector and related products.">
+<link rel="icon" type="image/svg+xml" href="../assets/logo/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css"><link rel="stylesheet" href="../css/components.css"><link rel="stylesheet" href="../css/responsive.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script defer src="../js/supabase.js"></script>
+<script defer src="../js/main.js"></script><script defer src="../js/products.js"></script><script defer src="../js/cart.js"></script><script defer src="../js/contact.js"></script>
+</head>
+<body>
+<div class="announce">Free delivery on orders over ₹999 · Easy 7-day returns</div>
+<header class="site-header"><div class="container bar">
+  <a class="logo" href="/" aria-label="Tilde home"><span class="logo-mark" aria-hidden="true">~</span>tilde</a>
+  <nav class="nav" aria-label="Main navigation"><a href="/">Home</a><a href="/shop" aria-current="page">Shop</a><a href="/#categories">Categories</a><a href="/about">About</a><a href="/contact">Contact</a></nav>
+  <form class="search" role="search" action="/shop" method="get"><i data-icon="search"></i>
+    <label class="sr-only" for="site-search">Search products</label>
+    <input id="site-search" name="q" type="search" placeholder="Search products" autocomplete="off">
+    <div class="suggest" id="suggest" hidden></div></form>
+  <button class="icon-btn cart-btn" data-open-cart aria-label="Open cart"><i data-icon="cart"></i><span class="cart-count" aria-live="polite">0</span></button>
+  <button class="icon-btn" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><i data-icon="menu"></i></button>
+</div></header>
+<main id="main">
+
+<div class="container"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/shop">Shop</a> / <span id="crumb">Product</span></nav>
+  <div class="detail" id="detail"><div class="skeleton" style="min-height:420px"></div></div>
+  <section class="section" id="related-wrap"><div class="section-head"><h2>You may also like</h2></div><div class="grid" id="related"></div></section></div>
+</main>
+<footer class="site-footer"><div class="container">
+  <div class="footer-grid">
+    <div><a class="logo" href="/"><span class="logo-mark" aria-hidden="true">~</span>tilde</a><p>Well-made everyday things for your desk, wardrobe and home.</p></div>
+    <div><h3>Shop</h3><ul><li><a href="/shop?cat=Electronics">Electronics</a></li><li><a href="/shop?cat=Clothing">Clothing</a></li><li><a href="/shop?cat=Accessories">Accessories</a></li><li><a href="/shop?cat=Home+%26+Lifestyle">Home &amp; Lifestyle</a></li></ul></div>
+    <div><h3>Company</h3><ul><li><a href="/about">About us</a></li><li><a href="/contact">Contact</a></li><li><a href="/cart">Your cart</a></li><li><a href="/admin">Store admin</a></li></ul></div>
+    <div><h3>Store information</h3><ul>
+      <li><i data-icon="pin"></i><span>12 Sample Street, Bengaluru 560001 (demo address)</span></li>
+      <li><i data-icon="phone"></i><span>+91 80 0000 0000</span></li>
+      <li><i data-icon="mail"></i><a href="mailto:hello@tilde.example">hello@tilde.example</a></li>
+      <li><i data-icon="truck"></i><span>Mon–Sat, 10am–7pm</span></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© <span id="year">2026</span> Tilde. Demo store: no real orders or payments.</span><span>Web Development Internship Project · Sysslan IT Solutions</span></div>
+</div></footer>
+<button class="icon-btn" id="to-top" aria-label="Back to top"><i data-icon="up"></i></button>
+<div id="overlay" hidden></div>
+<aside class="drawer" id="drawer" aria-label="Shopping cart" aria-hidden="true">
+  <header><h2>Your cart</h2><button class="icon-btn" data-close-cart aria-label="Close cart"><i data-icon="x"></i></button></header>
+  <div id="drawer-body" style="flex:1;overflow:auto;padding:1rem"></div><div class="drawer-foot" id="drawer-foot"></div>
+</aside>
+<dialog id="order-dialog"><h2>Order placed (demo)</h2><p>Your order number is <strong id="order-no"></strong>. This is a simulated checkout, so no payment was taken.</p>
+  <form method="dialog"><button class="btn btn-primary">Close</button></form></dialog>
+<div id="toasts" role="status" aria-live="polite"></div>
+</body>
+</html>
